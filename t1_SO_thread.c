@@ -45,15 +45,9 @@ thread(void* args)
     diametro = 2 * raio;
 
     pi_estimado = comprimento / diametro;    
-    
-    if(i%10000 == 0)
-    {
-      //printf("%d = %lf\n", i, pi_estimado);
-    }
   }
 
   double f = fatorial(20);
-  //printf("%lf\n", f);
   
   return 0;
 }
