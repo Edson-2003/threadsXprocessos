@@ -12,14 +12,13 @@ if [ "$1" = "clean" ]; then
    rm thread processo saida_processo.txt saida_thread.txt
    exit 1
 else 
-  
-  TIMEFORMAT=%R
-
-  gcc t1_SO_thread.c -o thread -Wall
+  g++ t1_SO_thread.c -o thread #-Wall
   echo "Tempo de execucao em segundos da thread"
-  time ./thread > saida_thread.txt
+  ./thread
+  #> saida_thread.txt
    
-  gcc t1_SO_processo.c -o processo -Wall
+  g++ t1_SO_processo.c -o processo #-Wall
   echo "Tempo de execucao em segundos do processo"
-  time ./processo > saida_processo.txt
+  ./processo
+  #> saida_processo.txt
 fi
