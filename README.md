@@ -18,7 +18,7 @@ para encontrar o ponto de inferencia.
 
 O projeto foi construido em C/C++, tendo sua maioria de codigo base escrito em c e apenas a medição de tempo em c++ utilizando a biblioteca chrono.
 
-## estruturas de dados do projeto
+## Estruturas de dados do projeto
 
 - **param_t**: estrutura que tem como objetivo armazenar o inicio e fim de intervalo de calculo para as funções
 
