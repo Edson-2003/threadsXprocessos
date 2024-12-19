@@ -79,27 +79,27 @@ int main()
 
   for(int i = 1; i <= iteration; i++)
   {  
-    int intervalo = 1000000 / i;
+    int interval = 1000000 / i;
     start = chrono::system_clock::now();
    
     for(int j = 0; j < average; j++)
     {
-      FILE* file = fopen("saida.threads", "wt");
+      FILE* file = fopen("threads.out", "wt");
       struct arg_t* arg = (struct arg_t*) malloc(i * sizeof(struct arg_t));
      
-      pthread_t minhas_threads[i];
+      pthread_t my_threads[i];
       
       for(int k = 0; k < i; k++)
       {
-        arg[k].begin = (k * intervalo);
-        arg[k].end = ((k+1)* intervalo);
+        arg[k].begin = (k * interval);
+        arg[k].end = ((k+1)* interval);
         arg[k].file = file;
 
-        pthread_create(&minhas_threads[k], NULL, &thread, (void *)&arg[k]);
+        pthread_create(&my_threads[k], NULL, &thread, (void *)&arg[k]);
       }
       for(int k = 0; k < i; k++)
       {
-        pthread_join(minhas_threads[k], NULL);
+        pthread_join(my_threads[k], NULL);
       }
       
       fclose(file);
@@ -115,7 +115,7 @@ int main()
     
     for(int j = 0; j < average; j++)
     {
-      FILE* file = fopen("saida.process", "wt");
+      FILE* file = fopen("process.out", "wt");
       
       for(int k = 1; k < i; k++)
       {
@@ -123,8 +123,8 @@ int main()
         
         if(pid == 0)
         {
-          int begin = k * intervalo;
-          int end = (k + 1) * intervalo;
+          int begin = k * interval;
+          int end = (k + 1) * interval;
         
           process(getpid(), begin, end, file);
         }
