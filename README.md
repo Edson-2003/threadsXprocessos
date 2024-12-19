@@ -20,16 +20,15 @@ O projeto foi construido em C/C++, tendo sua maioria de codigo base escrito em c
 
 ## Estruturas de dados do projeto
 
-- **param_t**: estrutura que tem como objetivo armazenar o inicio e fim de intervalo de calculo para as funções
+- **arg_t**: estrutura que tem como objetivo armazenar o inicio e fim de intervalo de calculo para as funções e o ponteiro do arquivo de I/O.
 
 ## Funções e seus usos
 
-- **Fatorial**: Função utilizada apenas para gerar processamento e gasto de tempo durante a execução das threads e processos, assim forçando o CPU-Bound
-- **Processo**: Função que define o codigo executado pelos processos criados, recebendo como parametro o pid do filho, o inicio de intervalo e o fim de intervalo
-- **Thread**: Função que define o codigo que sera executado nas threads criadas, recebendo como parametro a estrutura **param_t** que delimita o intervalo de inicio e fim.
+- **Processo**: Função que define o codigo executado pelos processos criados, recebendo como parametro o pid do filho, o inicio de intervalo, o fim de intervalo e o ponteiro do arquivo.
+- **Thread**: Função que define o codigo que sera executado nas threads criadas, recebendo como parametro a estrutura **arg_t** que delimita o intervalo de inicio, fim e o ponteiro do arquivo.
 
 ## Falando sobre a Main
-Em nossa função main acontece o gerenciamento do comportamento de cada thread e de cada processo, e também fazendo a medição de tempo para a execução com N threads e N processos.
+Em nossa função main acontece o gerenciamento do comportamento de cada thread e de cada processo, e também fazendo a media da medição de tempo para a execução com N threads e N processos.
 
 ## Integrantes do Grupo
 - Edson Augusto Pereira Ferreira
