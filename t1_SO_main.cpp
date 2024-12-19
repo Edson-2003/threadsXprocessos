@@ -9,7 +9,7 @@
 
 using namespace std;
 
-#define iteration 10
+#define iteration 100
 #define intervalo (1000000/10)
 #define raio_inicial 1000
 
@@ -87,7 +87,7 @@ int main()
   printf("|\tN\t|\tthread\t\t|\tprocesso\t|\n");
   printf("|_______________________________________________________________|\n");
 
-  for(int j = 0; j < iteration; j++)
+  for(int j = 1; j <= iteration; j++)
   {  
     start = chrono::system_clock::now();
     struct param_t param[j];
@@ -112,7 +112,7 @@ int main()
     
     start = chrono::system_clock::now();
     
-    for (int i = 0; i < j; i++)
+    for (int i = 1; i < j; i++)
     {
       pid_t pid = fork();
       
@@ -146,11 +146,11 @@ int main()
 
     if((tmp_processo > tmp_thread) && (aux == 0))
     {
-      ponto_f = j+1;
+      ponto_f = j;
       aux = 1;
     }
 
-    printf("|\t%d\t|\t%3.5lf us\t|\t%3.5lf us\t|\n", j+1, ((tmp_thread.count())*1000000), ((tmp_processo.count())*1000000));
+    printf("|\t%d\t|\t%3.5lf us\t|\t%3.5lf us\t|\n", j, ((tmp_thread.count())*1000000), ((tmp_processo.count())*1000000));
 
   }
   printf("|_______________________________________________________________|\n");
