@@ -157,7 +157,7 @@ int main()
 
   }
   printf("|_______________________________________________________________|\n");
-  printf("|  Ponto de flexao  |     %d                                     |\n", point_f);  
+  printf("|  Ponto de inflexao  |     %d                                     |\n", point_f);  
   printf("|_______________________________________________________________|\n");
 
   return 0;

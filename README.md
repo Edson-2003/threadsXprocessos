@@ -7,7 +7,7 @@ para encontrar o ponto de inferencia.
 - [Threads e Processos](#threads-e-processos)
   - [Índice](#índice)
   - [Descrição do Projeto](#descrição-do-projeto)
-  - [Estruturas de dados do projeto](#Estruturas-de-dados-do-projeto)
+  - [Estruturas de dados do projeto](#estruturas-de-dados-do-projeto)
   - [Funções e seus usos](#funções-e-seus-usos)
   - [Falando sobre a Main](#falando-sobre-a-main)
   - [Integrantes do Grupo](#integrantes-do-grupo)
@@ -26,6 +26,8 @@ O projeto foi construido em C/C++, tendo sua maioria de codigo base escrito em c
 
 - **Processo**: Função que define o codigo executado pelos processos criados, recebendo como parametro o pid do filho, o inicio de intervalo, o fim de intervalo e o ponteiro do arquivo.
 - **Thread**: Função que define o codigo que sera executado nas threads criadas, recebendo como parametro a estrutura **arg_t** que delimita o intervalo de inicio, fim e o ponteiro do arquivo.
+
+Nas duas funções o CPU-Bound é forçado pelo calculo do Pi e o I/O-Bound é forçado pela escrita em arquivos.
 
 ## Falando sobre a Main
 Em nossa função main acontece o gerenciamento do comportamento de cada thread e de cada processo, e também fazendo a media da medição de tempo para a execução com N threads e N processos.
