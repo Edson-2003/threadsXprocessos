@@ -7,7 +7,7 @@ para encontrar o ponto de inferencia.
 - [Threads e Processos](#threads-e-processos)
   - [Índice](#índice)
   - [Descrição do Projeto](#descrição-do-projeto)
-  - [estruturas de dados do projeto](#estruturas-de-dados-do-projeto)
+  - [Estruturas de dados do projeto](#Estruturas-de-dados-do-projeto)
   - [Funções e seus usos](#funções-e-seus-usos)
   - [Falando sobre a Main](#falando-sobre-a-main)
   - [Integrantes do Grupo](#integrantes-do-grupo)
