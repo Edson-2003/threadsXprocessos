@@ -9,6 +9,7 @@
 
 using namespace std;
 
+#define iteration 10
 #define intervalo (1000000/10)
 #define raio_inicial 1000
 
@@ -76,11 +77,17 @@ thread(void* args)
 int main()
 {
   chrono::time_point<chrono::system_clock> start, end;
-  chrono::duration<double> processo_seconds;
-  chrono::duration<double> thread_seconds;
+  chrono::duration<double> tmp_thread;
+  chrono::duration<double> tmp_processo;
 
+  int aux = 0;
+  int ponto_f;
    
-  for(int j = 0; j < 10; j++)
+  printf("________________________________________________________________\n");
+  printf("|\tN\t|\tthread\t\t|\tprocesso\t|\n");
+  printf("|_______________________________________________________________|\n");
+
+  for(int j = 0; j < iteration; j++)
   {  
     start = chrono::system_clock::now();
     struct param_t param[j];
@@ -99,17 +106,10 @@ int main()
     }
     
     end = chrono::system_clock::now();
-    thread_seconds = end - start;
-
-  }
-    
-//  printf("%3.5lf us\n", ((thread_seconds.count())*1000000));
-
+    tmp_thread = end - start;
+  
 //================fim_de_analise_da_thread=========================//
-  
-  for(int j = 0; j < 10; j++)
-  {
-  
+    
     start = chrono::system_clock::now();
     
     for (int i = 0; i < j; i++)
@@ -142,9 +142,20 @@ int main()
           }
     }
     end = chrono::system_clock::now();
-    processo_seconds = end - start;
+    tmp_processo = end - start;
+
+    if((tmp_processo > tmp_thread) && (aux == 0))
+    {
+      ponto_f = j+1;
+      aux = 1;
+    }
+
+    printf("|\t%d\t|\t%3.5lf us\t|\t%3.5lf us\t|\n", j+1, ((tmp_thread.count())*1000000), ((tmp_processo.count())*1000000));
+
   }
- // printf("%3.5lf us\n", ((processo_seconds.count())*1000000));    
+  printf("|_______________________________________________________________|\n");
+  printf("|  Ponto de flexao  |     %d                                     |\n", ponto_f);  
+  printf("|_______________________________________________________________|\n");
 
   return 0;
 }
