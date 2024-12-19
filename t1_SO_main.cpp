@@ -117,7 +117,7 @@ int main()
     {
       FILE* file = fopen("process.out", "wt");
       
-      for(int k = 1; k < i; k++)
+      for(int k = 1; k <= i; k++)
       {
         pid_t pid = fork();
         
