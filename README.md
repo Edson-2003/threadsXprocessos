@@ -26,3 +26,4 @@ O projeto foi construido em C/C++, sendo tendo sua maioria de codigo base escrit
 - **Processo**: Função que define o codigo executado pelos processos criados, recebendo como parametro o pid do filho, o inicio de intervalo e o fim de intervalo
 - **Thread**: Função que define o codigo que sera executado nas threads criadas, recebendo como parametro a estrutura **param_t** que delimita o intervalo de inicio e fim.
 
+
